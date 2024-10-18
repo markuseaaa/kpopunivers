@@ -1,0 +1,2442 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial'
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navhero {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF);
+    color: #fff;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent; /* Initial background color */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 20px;
+}
+
+.logo img {
+    width: 189px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed the container */
+    padding-left: 10px;
+}
+
+.burger-toggle {
+    display: none; /* Hide the checkbox */
+}
+
+.burger {
+    display: none; /* Hidden by default */
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.nav-links {
+    font-weight: bold;
+    list-style: none;
+    display: flex;
+    gap: 100px;
+}
+
+.nav-links li a {
+    position: relative;
+    text-decoration: none; /* Remove default underline */
+    color: white; /* Adjust text color if needed */
+    font-weight: bold; /* Make the font bold */
+}
+
+.nav-links li a::after {
+    content: ''; /* Empty content to create the underline */
+    position: absolute;
+    width: 0; /* Start with no width (hidden) */
+    height: 2px; /* Thickness of the line */
+    background-color: white; /* Color of the line */
+    bottom: -5px; /* Position the line just below the text */
+    left: 0;
+    transition: width 0.3s ease; /* Smooth transition */
+}
+
+.nav-links li a:hover::after {
+    width: 100%; /* Expand the line to the full width of the text on hover */
+}
+
+
+.btn-cta {
+    width: 120px;
+    height: 43px;
+    padding: 0;
+    background-color: #ffffff; /* Button background */
+    border-radius: 30px;
+    transition: background 0.3s ease; /* Use background, not background-color */
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Font Styling */
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* Default text color */
+    position: relative;
+    overflow: hidden; /* For pseudo-element to work correctly */
+}
+
+.btn-cta::before {
+    content: "Kontakt"; /* Button text */
+    position: absolute;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient for text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Transparent to show gradient */
+    font-size: 20px;
+    transition: background 0.3s ease;
+}
+
+.btn-cta:hover {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Apply gradient to button background on hover */
+}
+
+.btn-cta:hover::before {
+    background: white; /* Change text to white on hover */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: white;
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: flex-start; /* Align content to start */
+    align-items: flex-start; /* Vertically center the content */
+    text-align: center;
+    flex-grow: 1;
+    padding-top: 250px;
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+.btn-hero {
+    width: 159px;
+    height: 58px;
+    padding: 0px;
+    background-color: #fff;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.3s ease; /* Use background, not background-color */
+    transition: background-color 0.3s ease, transform 0.3s, font-size 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    color: white; /* Default text color */
+    overflow: hidden; /* For pseudo-element to work correctly */
+}
+
+.btn-hero::before {
+    content: "Læs mere"; /* Button text */
+    position: absolute;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient for text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Transparent to show gradient */
+    font-size: 22px;
+    transition: background 0.3s ease;
+}
+
+.btn-hero:hover {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Apply gradient to button background on hover */
+    font-size: 25px;
+    transform: scale(1.1);
+}
+
+.btn-hero:hover::before {
+    background: white; /* Change text to white on hover */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: white;
+}
+
+/* Kategorier */
+.container {
+    height: auto;
+    display: flex;
+    gap: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 384px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarges the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhances the shadow effect on hover */
+}
+
+.con-image-placeholder1 img {
+    width: 100%;
+    height: 281px; /* Adjust this height as per your preference */
+    object-fit: cover; /* Ensures the image covers the entire placeholder area without distortion */
+    display: block; /* This removes any gap caused by inline image behavior */
+}
+
+.con-image-placeholder2 img {
+    width: 100%;
+    height: 281px;
+    object-fit: cover; 
+    display: block; 
+}
+
+.con-image-placeholder3 img {
+    width: 100%;
+    height: 281px; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.con-content {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF);
+    color: white;
+    padding: 20px;
+    height: 259px;
+}
+
+.container h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.container p{
+    font-size: 25px;
+    font-weight: 100;
+}
+
+/* Events Section */
+.events-section {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Same gradient */
+    color: white;
+    text-align: center;
+    padding: 60px 20px; /* Adjust padding as needed */
+    height: auto;
+}
+
+.events-content h2 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.events-content p {
+    font-size: 25px;
+}
+
+.events-content h4 {
+    font-size: 40px;
+    margin-top: 65px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.events-content h3 {
+    font-size: 33px;
+    margin-bottom: 20px;
+    font-weight: lighter;
+}   
+
+.event-link {
+    font-size: 25px;
+    color: #00f2ff; /* Light blue color for the link */
+    text-decoration: none;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.event-link:hover {
+    text-decoration: underline;
+}
+
+.btn-events {
+    padding: 12px 120px;
+    margin-top: 30px;
+    background-color: white; /* Solid white background */
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /* For the ::before pseudo-element */
+    transition: background 0.3s ease; /* Use background, not background-color */
+    transition: background-color 0.3s ease, transform 0.3s, font-size 0.3s;
+    color: white; /* Default white text */
+}
+
+/* Gradient text with pseudo-element */
+.btn-events::before {
+    content: "Flere events"; /* Same text as the button */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient for text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hide the background so only the gradient shows */
+    font-size: 25px;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect */
+.btn-events:hover {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background on hover */
+    transform: scale(1.1);
+}
+
+.btn-events:hover::before {
+    color: white; /* White text on hover */
+    background: none; /* Remove the gradient from the text on hover */
+}
+
+/*kontakt section*/
+.kontakt-section {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling */
+}
+
+.kontakt-section h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 25px;
+}
+
+.kontakt-section p {
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.btn-kontakt {
+    padding: 15px 70px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    color: white; /* Always white text */
+    transition: transform 0.3s ease; /* Only a subtle transform effect on hover */
+    margin-bottom: 70px;
+}
+
+/* Hover effect */
+.btn-kontakt:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    margin-left: 1%;
+    margin-right: 3%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    display: flex; /* Flexbox to align items in a row */
+    justify-content: space-between; /* Space between logo, text, and nav */
+    align-items: center; /* Vertically center items */
+}
+
+.footer-content .logo img {
+    width: 200px;
+}
+
+.footer-content p {
+    font-size: 20px;
+}
+
+.footer-content {
+    text-align: center;
+    flex-grow: 1; /* Take up available space */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    font-size: 20px;
+    display: flex; /* Display nav links in a row */
+    gap: 65px;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Bottom: This will stack the line and the copyright text */
+.footer-bottom {
+    margin-top: 0px;
+    text-align: center; /* Ensure everything is centered */
+}
+
+.footer-bottom hr {
+    border: none;
+    height: 1px;
+    margin-right: 3%;
+    margin-left: 3%;
+    background-color: rgba(255, 255, 255, 0.3); /* Subtle white line */
+    margin-bottom: 0px;
+}
+
+.footer-bottom p {
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    font-weight: 300; /* Light weight for Poppins */
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7); /* Fainter white for copyright */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8); /* Background color for nav options */
+        color: white; /* Make text color white */
+        width: 100%;
+        padding: 20px;
+        position: absolute; /* Make it an overlay */
+        top: 125px; /* Adjust this value to move the entire dropdown further down */
+        right: 0;
+        z-index: 999;
+        border-bottom-left-radius: 30px; /* Add border radius to the bottom corners */
+        border-bottom-right-radius: 30px; /* Add border radius to the bottom corners */
+    }
+
+    .nav-links li {
+        margin-bottom: 15px; /* Reduced spacing between menu items */
+    }
+
+    .nav-links li:last-child {
+        margin-bottom: 0; /* Remove margin from the last menu item */
+    }
+
+    .nav-links li a {
+        color: white !important; /* Ensure links have white text */
+        padding: 5px 0; /* Reduce padding to make tapping more comfortable but not excessive */
+    }
+
+    .burger {
+        display: block; /* Show burger icon */
+        cursor: pointer;
+    }
+
+    .burger-toggle:checked + .burger + .nav-links {
+        display: flex; /* Show links when burger menu is toggled */
+    }
+
+    .btn-cta {
+        display: none !important; /* Forcefully hide the "Kontakt" button on small screens */
+    }
+    .logo img {
+        width: 160px; /* Reduce logo size for mobile */
+        padding-left: 0;
+    }
+}
+
+/* Hero Section - Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Let height adjust to fit content */
+        padding: 200px 20px; /* Reduced padding for a more compact view */
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: flex-start; /* Align content to the start */
+        align-items: center; /* Center items horizontally */
+        text-align: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 600px; /* Limit the maximum width for better readability */
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column; /* Stack items */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .hero h1 {
+        margin-bottom: 30px; /* Create space below heading */
+        line-height: 1.3; /* Improve readability on smaller screens */
+    }
+
+    .hero p {
+        margin-bottom: 80px; /* Add space below the paragraph */
+        line-height: 1.5;
+    }
+
+    .btn-hero {
+        order: 3; /* Ensure the button is displayed after the heading and paragraph */
+        width: 180px; /* Adjust button width for a better fit */
+        height: 50px; /* Adjust height for better spacing */
+        margin-top: 20px; /* Add space above button */
+        margin-bottom: 20px; /* Add space below button */
+        border-radius: 25px;
+    }
+}
+
+
+/* Responsive Styles for Kategorier Section */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center; /* Center align stacked cards */
+        gap: 30px; /* Reduce gap for smaller screens */
+    }
+
+    .card {
+        width: 90%; /* Make each card take up most of the screen width on mobile */
+        margin: 20px 0; /* Add margin to create space between stacked cards */
+    }
+}
+
+/* Footer for Mobile View */
+@media (max-width: 768px) {
+    /* Adjust Footer Layout for Mobile Devices */
+    .footer-content {
+        display: flex; /* Flexbox for aligning items */
+        flex-direction: row; /* Keep the logo and links in a row */
+        align-items: center; /* Align items vertically center */
+        justify-content: flex-start; /* Align logo and links slightly to the left */
+        text-align: left; /* Align text to the left */
+        gap: 30px; /* Space between the logo and the links */
+        padding-left: 20px; /* Add padding to shift content slightly to the left */
+    }
+
+    .footer-content .logo img {
+        width: 175px; /* Smaller size for the logo on mobile devices */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Hide Footer Paragraph Text on Mobile */
+    .footer-content p {
+        display: none; /* Remove paragraph text on mobile */
+    }
+
+    /* Navigation Links Adjustments */
+    .footer-nav ul {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start; /* Align links to the left */
+        gap: 15px; /* Reduced gap between each link for better spacing */
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+    }
+
+    .footer-nav ul li {
+        padding: 0; /* Remove unnecessary padding */
+    }
+
+    /* Footer Bottom Adjustments */
+    .footer-bottom hr {
+        margin: 0px 0; /* Space above and below the line */
+    }
+
+    .footer-bottom p {
+        display: none; /* Hide copyright text on mobile */
+    }
+}
+
+/* Introduktion Page */
+.introduction-page .navhero {
+    background-color: white;
+    color: black;
+}
+
+.introduction-page .navbar {
+    background-color: white; /* White background for the navbar */
+}
+
+.introduction-page .nav-links li a {
+    color: black; /* Black text for nav links */
+}
+
+.introduction-page .nav-links li a.introduktion::after {
+    content: ''; /* Create an empty content */
+    position: absolute; /* Position absolutely */
+    width: 100%; /* Full width of the link */
+    height: 2px; /* Height of the line */
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient color */
+    bottom: -5px; /* Position it just below the text */
+    left: 0; /* Align to the left */
+    transform: scaleX(1); /* Always visible */
+}
+
+.introduction-page .nav-links li a::after {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient underline */
+}
+
+/* Reversed Button (nav button) */
+.introduction-page .btn-cta {
+    width: 120px;
+    height: 43px;
+    padding: 0;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* White text initially */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1; /* Ensure button content stays on top */
+    border: none; /* Remove any default border */
+}
+
+/* Ensure the text is white by default */
+.introduction-page .btn-cta::before {
+    content: "Kontakt"; /* Button text */
+    position: absolute;
+    color: white; /* Keep text white initially */
+    font-size: 20px;
+    z-index: 2; /* Ensure text stays on top */
+}
+
+/* Reversed Button (nav button) */
+.introduction-page .btn-cta {
+    width: 120px;
+    height: 43px;
+    padding: 0;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* White text initially */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure the text is white by default */
+.introduction-page .btn-cta::before {
+    content: "Kontakt"; /* Button text */
+    position: absolute;
+    color: white; /* Keep text white initially */
+    font-size: 20px;
+}
+
+/* Hover Effect */
+.introduction-page .btn-cta:hover {
+    background-color: white; /* White background on hover */
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient text on hover */
+    -webkit-text-fill-color: transparent; /* Ensure gradient text is visible */
+}
+
+.introduction-page .btn-cta:hover::before {
+    background-image: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.introduction-page .hero {
+    background-color: white;
+    color: black;
+}
+
+.introduction-page .hero h1, .introduction-page .hero p {
+    color: black;
+}
+
+/* Introduktion Page Hero Section */
+.introduction-page .hero-section {
+    padding: 50px 30px; /* Set padding on the left and right to 30px */
+    background-color: white;
+    text-align: left;
+    min-height: calc(100vh + 100px); /* Increase hero section height by 100px */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+}
+
+.introduction-page .hero-content {
+    display: grid; /* Use CSS Grid */
+    grid-template-columns: 1fr 661px; /* One column for text, one for image */
+    grid-gap: 30px; /* Space between text and image */
+    align-items: center; /* Vertically center the content inside the grid */
+    max-width: 1500px; /* Ensure content is centered and fits the screen */
+    margin: 0 auto; /* Center the grid content */
+}
+
+.introduction-page .hero-text {
+    padding-left: 30px; /* Ensure only 30px padding on the left */
+}
+
+.introduction-page .hero-text h1 {
+    font-size: 70px; /* Set h1 font size to 70px */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.introduction-page .hero-text p {
+    font-size: 28px; /* Set p font size to 28px */
+    line-height: 50px; /* Set line-height to 50px */
+    max-width: 624px; /* Limit paragraph width to 624px */
+}
+
+.introduction-page .hero-image-placeholder {
+    width: 661px; /* Fixed width */
+    height: 644px; /* Fixed height */
+    background-color: #d3d3d3; /* Fallback background color */
+    border-radius: 30px; /* Add 30px corner radius */
+    overflow: hidden; /* Ensures image corners stay rounded */
+    margin-left: auto; /* Align the image properly without skewing */
+    margin-right: 30px; /* Add space between the image and screen edge */
+}
+
+.introduction-page .hero-image-placeholder img {
+    width: 100%;
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder without distortion */
+    border-radius: 30px; /* Apply same corner radius to the image */
+}
+
+/* Scoped styles for the article section to avoid affecting other pages */
+.article-section {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    padding: 40px 30px; /* Moderate padding */
+    text-align: center;
+    color: white;
+}
+
+.article-section .section-header h1 {
+    font-size: 50px; /* Large title size */
+    margin-bottom: 20px; /* Spacing below title */
+    font-weight: bold;
+}
+
+.article-section .section-header p {
+    font-size: 23px; /* Larger text size */
+    line-height: 2.3; /* Improved readability */
+    max-width: 1131px; /* Set a wider max width for the paragraph */
+    margin: 20px auto; /* Center paragraphs */
+    font-weight: lighter;
+}
+
+/* Ensure that hero section and main page styles are unaffected */
+.introduction-page .hero-section, 
+.main-page .hero-section {
+    padding: initial;
+    margin: initial;
+}
+
+/* Scoped styles for the Grupper section */
+.grupper-section {
+    background-color: white; /* White background */
+    padding: 50px 30px; /* Add some padding */
+    text-align: center; /* Center-align text */
+    color: black;
+}
+
+.grupper-section .section-header h2 {
+    font-size: 45px; /* Large heading */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.grupper-section .section-header p {
+    font-size: 23px; /* Paragraph text size */
+    line-height: 2.3; /* Improve readability */
+    max-width: 1131px; /* Set the same width as placeholders */
+    margin: 0 auto 40px; /* Center text and add bottom margin */
+    font-weight: lighter;
+    letter-spacing: 0.5px;
+}
+
+.grupper-grid {
+    display: flex;
+    flex-direction: column; /* Stack placeholders vertically */
+    align-items: center; /* Center-align the grid */
+    gap: 50px; /* Add 30px gap between placeholders */
+}
+
+.grupper-placeholder {
+    width: 1131px; /* Set width to 1131px */
+    height: 217px; /* Set height to 217px */
+    background-color: white; /* Set background color to make the gradient border visible */
+    border: 5px solid transparent; /* Use a transparent border */
+    border-radius: 30px; /* Corner radius of 30px */
+    background-image: linear-gradient(white, white), linear-gradient(135deg, #4B87FF, #CA4CEF); /* Double background */
+    background-origin: border-box;
+    background-clip: content-box, border-box; /* Ensures gradient only applies to the border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure the image is contained inside the rounded corners */
+    transition: transform 0.3s ease; /* Subtle transform effect on hover */
+}
+
+.grupper-placeholder img {
+    width: 100%; /* Ensure the image takes full width */
+    height: 100%; /* Ensure the image takes full height */
+    object-fit: cover; /* Ensure the image covers the entire placeholder without distortion */
+    border-radius: 25px; /* Apply radius slightly less than the container to match the border radius */
+}
+
+/* Hover effect */
+.grupper-placeholder:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Merchandise Section */
+.merch-section {
+    background-color: white;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.merch-section .gradient-text {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    color: transparent; /* Make text transparent to show gradient */
+    margin-bottom: 30px;
+}
+
+.merch-section p {
+    font-size: 23px;
+    line-height: 2.3;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Albums Section */
+.albums-section {
+    background-color: white;
+    padding: 60px 70px;
+}
+
+.albums-content {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+    justify-content: space-between; /* Distribute space between items */
+}
+
+.albums-placeholder {
+    width: 651px; /* Set width */
+    height: 585px; /* Set height */
+    background-color: #d3d3d3;
+    border-radius: 30px;
+    margin-right: 30px; /* Space between placeholder and text */
+}
+
+.albums-placeholder img {
+    width: 100%; /* Ensure the image takes full width */
+    height: 100%; /* Ensure the image takes full height */
+    object-fit: cover; /* Ensure the image covers the entire placeholder without distortion */
+    border-radius: 30px; /* Apply radius slightly less than the container to match the border radius */
+}
+
+.albums-text {
+    text-align: left; /* Align text to the left within this div */
+}
+
+.albums-text h3 {
+    font-size: 50px; /* Adjusted font size for Albums title */
+    margin-bottom: 20px;
+}
+
+.albums-text p {
+    font-size: 23px; /* Adjusted font size for Albums description */
+    line-height: 2.3;
+    max-width: 600px;
+}
+
+.lightsticks-section {
+    background-color: white;
+    padding: 60px 70px;
+}
+
+.lightsticks-content {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+    justify-content: space-between; /* Distribute space between items */
+    flex-direction: row-reverse; /* Reverse the direction to align image on the right */
+}
+
+.lightsticks-text {
+    text-align: right; /* Align text to the right within this div */
+    margin-right: 30px; /* Add margin to the right to create space between text and image */
+}
+
+.lightsticks-text h3 {
+    font-size: 50px; /* Adjusted font size for Lightsticks title */
+    margin-bottom: 20px;
+}
+
+.lightsticks-text p {
+    font-size: 23px; /* Adjusted font size for Lightsticks description */
+    line-height: 2.3;
+    max-width: 600px;
+}
+
+.lightsticks-placeholder {
+    width: 651px; /* Set width */
+    height: 585px; /* Set height */
+    background-color: #d3d3d3;
+    border-radius: 30px;
+}
+
+.lightsticks-placeholder img {
+    width: 100%; /* Ensure the image takes full width */
+    height: 100%; /* Ensure the image takes full height */
+    object-fit: cover; /* Ensure the image covers the entire placeholder without distortion */
+    border-radius: 30px; /* Apply radius slightly less than the container to match the border radius */
+}
+
+/* fankultur intro */
+.kontakt-section-intro {
+    background-color: white;
+    overflow: hidden;
+    text-align: center;
+    height: 525px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling */
+    padding-top: 20px;
+}
+
+.kontakt-section-intro p{
+    font-size: 30px;
+    padding-top: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+    line-height: 1.8;
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+    /* Hero Section Mobile Styling */
+    .introduction-page .hero-section {
+        padding: 20px 15px; /* Reduce padding for mobile to save space */
+        text-align: center; /* Center the text on mobile */
+        min-height: 80vh; /* Adjust the height for smaller screens */
+
+        display: block; /* Stack everything vertically */
+        align-items: unset; /* Unset any centering to allow free height adjustment */
+    }
+
+    .introduction-page .hero-content {
+        display: block; /* Stack content vertically on mobile */
+        text-align: center; /* Center text */
+        margin: 0 auto;
+    }
+
+    .introduction-page .hero-text,
+    .introduction-page .hero-image-placeholder {
+        width: 100%; /* Full width on mobile */
+        margin-left: 0; /* Remove margin */
+    }
+
+    .introduction-page .hero-image-placeholder {
+        width: 100%;
+        max-width: 661px; /* Limit the width to maintain layout */
+        height: auto; /* Let height adjust automatically */
+        margin-bottom: 20px; /* Space below the image */
+        background-color: #d3d3d3; /* Fallback background color */
+        border-radius: 30px; /* Add corner radius */
+        overflow: hidden; /* Ensure rounded corners for image */
+        display: flex; /* Flex to align image if needed */
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .introduction-page .hero-image-placeholder img {
+        width: 100%;
+        height: 100%; /* Set to fill the container height */
+        object-fit: cover; /* Make sure image fills without losing aspect ratio */
+        border-radius: 30px; /* Make sure it matches the container */
+        display: block; /* Remove any inline image gaps */
+    }    
+    
+    .introduction-page .hero-text {
+        margin-bottom: 20px; /* Add margin for spacing */
+        margin-top: 20px;
+    }
+
+    .introduction-page .hero-text h1 {
+        font-size: 45px; /* Adjust h1 font size for mobile */
+        margin-bottom: 15px;
+        margin-right: 20px;
+    }
+
+    .introduction-page .hero-text p {
+        font-size: 20px; /* Adjust p font size for mobile */
+        line-height: 30px; /* Make line height smaller for readability */
+        margin-right: 20px;
+    }
+
+    /* Article Section Mobile Styling */
+    .article-section {
+        padding: 30px 15px; /* Reduce padding for smaller screens */
+    }
+
+    .article-section .section-header h1 {
+        font-size: 35px; /* Smaller title on mobile */
+        margin-bottom: 15px;
+    }
+
+    .article-section .section-header p {
+        font-size: 18px; /* Adjusted text size */
+        line-height: 1.8; /* Tighter line spacing */
+        max-width: 100%; /* Make sure it takes full width */
+        margin: 15px auto;
+    }
+
+    /* Grupper Section Mobile Styling */
+    .grupper-section .section-header h2 {
+        font-size: 35px; /* Smaller heading size */
+        margin-bottom: 15px;
+    }
+
+    .grupper-section .section-header p {
+        font-size: 18px; /* Reduce paragraph font size */
+        line-height: 1.8; /* Line height adjusted for readability */
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .grupper-grid {
+        gap: 30px; /* Smaller gap between placeholders */
+    }
+
+    .grupper-placeholder {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Adjust height */
+        padding: 10px; /* Padding for smaller screens */
+        border: 1px solid transparent; /* Smaller border stroke */
+        background-image: linear-gradient(white, white), linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+        background-origin: border-box;
+        background-clip: content-box, border-box; /* Ensures gradient only applies to the border */
+    }
+
+    .grupper-placeholder img {
+        width: 100%; /* Full width of the image */
+        height: 100%; /* Full height of the container */
+        object-fit: cover; /* Ensure the image fills the container */
+        border-radius: 20px; /* Match the radius to keep alignment within the gradient border */
+    }
+
+    /* Merchandise Section */
+    .merch-section .gradient-text {
+        font-size: 35px; /* Smaller gradient text for mobile */
+    }
+
+    .merch-section p {
+        font-size: 18px; /* Smaller paragraph text */
+        line-height: 1.8; /* Adjust line height */
+    }
+
+    /* Albums & Lightsticks Section Adjustments */
+    .albums-content,
+    .lightsticks-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        text-align: center; /* Align text for mobile */
+    }
+
+    .albums-placeholder,
+    .lightsticks-placeholder {
+        width: 100%; /* Full width */
+        height: auto; /* Flexible height */
+        margin: 0 0 20px 0; /* Bottom margin for spacing */
+    }
+
+    .albums-text h3,
+    .lightsticks-text h3 {
+        font-size: 35px; /* Smaller titles for mobile */
+    }
+
+    .albums-text p,
+    .lightsticks-text p {
+        font-size: 18px; /* Adjust text size */
+        max-width: 100%; /* Full width text */
+    }
+
+    /* Kontakt Section Intro */
+    .kontakt-section-intro {
+        padding: 40px 15px; /* Reduce padding for mobile */
+        height: auto; /* Allow flexible height */
+    }
+
+    .kontakt-section-intro p {
+        font-size: 20px; /* Smaller font size */
+        padding: 20px 15px; /* Reduce padding for text */
+    }
+
+    /* Navbar for Introduktion Page */
+    .introduction-page .navbar {
+        position: relative; /* Make sure the navbar is positioned correctly */
+        padding: 20px;
+    }
+
+    .introduction-page .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8); /* Background color for nav options */
+        color: white;
+        width: 100%; /* Make it narrower to avoid touching the edges */
+        padding: 20px;
+        position: absolute; /* Make it an overlay */
+        top: 110px; /* Adjust position slightly lower to avoid overlap with header */
+        border-bottom-left-radius: 30px; /* Rounded corners at the bottom left */
+        border-bottom-right-radius: 30px; /* Rounded corners at the bottom right */
+        z-index: 999;
+    }
+
+    .introduction-page .nav-links li {
+        margin-bottom: 15px; /* Consistent spacing between links */
+    }
+
+    .introduction-page .nav-links li a {
+        color: white; /* Set link text color to white */
+    }
+
+    .introduction-page .burger {
+        display: block; /* Show burger icon */
+        cursor: pointer;
+        font-size: 28px; /* Adjust icon size */
+        color: black; /* Burger icon color */
+    }
+
+    .introduction-page .burger-toggle:checked + .burger + .nav-links {
+        display: flex; /* Show links when burger menu is toggled */
+    }
+
+    /* Hide the "Kontakt" Button on Mobile */
+    .introduction-page .btn-cta {
+        display: none; /* Hide the button on small screens */
+    }
+
+    /* Adjust the Navbar Logo Position */
+    .introduction-page .logo img {
+        width: 160px; /* Reduce logo size for mobile */
+        padding-left: 0;
+    }
+}
+
+/*Fankultur page styling*/
+.fankultur-page .navhero {
+    background-color: white;
+    color: black;
+}
+
+.fankultur-page .navbar {
+    background-color: white; /* White background for the navbar */
+}
+
+.fankultur-page .nav-links li a {
+    color: black; /* Black text for nav links */
+}
+
+.fankultur-page .nav-links li a.fankultur::after {
+    content: ''; /* Create an empty content */
+    position: absolute; /* Position absolutely */
+    width: 100%; /* Full width of the link */
+    height: 2px; /* Height of the line */
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient color */
+    bottom: -5px; /* Position it just below the text */
+    left: 0; /* Align to the left */
+    transform: scaleX(1); /* Always visible */
+}
+
+.fankultur-page .nav-links li a::after {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient underline */
+}
+
+/* Reversed Button (nav button) */
+.fankultur-page .btn-cta {
+    width: 120px;
+    height: 43px;
+    padding: 0;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* White text initially */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1; /* Ensure button content stays on top */
+    border: none; /* Remove any default border */
+}
+
+/* Ensure the text is white by default */
+.fankultur-page .btn-cta::before {
+    content: "Kontakt"; /* Button text */
+    position: absolute;
+    color: white; /* Keep text white initially */
+    font-size: 20px;
+    z-index: 2; /* Ensure text stays on top */
+}
+
+/* Reversed Button (nav button) */
+.fankultur-page .btn-cta {
+    width: 120px;
+    height: 43px;
+    padding: 0;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* White text initially */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure the text is white by default */
+.fankultur-page .btn-cta::before {
+    content: "Kontakt"; /* Button text */
+    position: absolute;
+    color: white; /* Keep text white initially */
+    font-size: 20px;
+}
+
+/* Hover Effect */
+.fankultur-page .btn-cta:hover {
+    background-color: white; /* White background on hover */
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient text on hover */
+    -webkit-text-fill-color: transparent; /* Ensure gradient text is visible */
+}
+
+.fankultur-page .btn-cta:hover::before {
+    background-image: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.fankultur-page .hero {
+    background-color: white;
+    color: black;
+}
+
+.fankultur-page .hero h1, .fankultur-page .hero p {
+    color: black;
+}
+
+/* Fankultur Hero Section */
+.fankultur-hero-section {
+    padding:120px 0px; /* Padding for spacing */
+    height: 1000px; /* Minimum height for the hero section */
+    position: relative; /* Allows absolutely positioned children */
+}
+
+.fankultur-hero-gradient-background {
+    margin-top: 300px;
+    position: absolute; /* Position it absolutely within the hero section */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    height: 580px; /* Set the height of the gradient background */
+    width: 100%;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    border-radius: 0px; /* Match corner radius */
+    z-index: 0; /* Ensure background is behind all content */
+}
+
+.fankultur-hero-content {
+    display: flex; /* Flexbox layout for content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    position: relative; /* Allows z-index stacking for text and image */
+    z-index: 1; /* Ensure content is above the gradient */
+}
+
+.fankultur-hero-text {
+    text-align: center; /* Center text */
+    margin-bottom: 50px; /* Space below text */
+}
+
+.fankultur-hero-text h1 {
+    font-size: 70px; /* Font size for the heading */
+    margin-bottom: 20px; /* Margin below heading */
+    font-weight: bold; /* Bold text */
+}
+
+.fankultur-hero-text p {
+    font-size: 28px; /* Font size for paragraph */
+    line-height: 50px; /* Line height for readability */
+}
+
+.fankultur-hero-image-container {
+    position: relative; /* Keep this for absolute positioning of the gradient */
+    width: 1072px; /* Fixed width to match the image placeholder */
+    height: 591px; /* Fixed height to match the image placeholder */
+    margin: 0 auto; /* Center the image container */
+}
+
+.fankultur-hero-image-placeholder {
+    width: 1072px; /* Fixed width */
+    height: 591px; /* Fixed height */
+    border-radius: 30px; /* Rounded corners for image */
+    overflow: hidden; /* Ensure corners stay rounded */
+    position: relative; /* Position relative for inner image */
+    z-index: 1; /* Ensure image is above background */
+}
+
+.fankultur-hero-image-placeholder img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder */
+    border-radius: 30px; /* Apply same corner radius to the image */
+}
+
+/* Interaktioner Section */
+.interaktioner-section {
+    background-color: white;
+    padding: 0px 70px;
+    padding-top: 175px;
+    padding-bottom: 70px;
+}
+
+.interaktioner-content {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+    justify-content: space-between; /* Distribute space between items */
+}
+
+.interaktioner-placeholder {
+    width: 651px; /* Set width */
+    height: 585px; /* Set height */
+    background-color: #d3d3d3;
+    border-radius: 30px;
+    margin-right: 30px; /* Space between placeholder and text */
+}
+
+.interaktioner-placeholder img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder */
+    border-radius: 30px; /* Apply same corner radius to the image */
+}
+
+.interaktioner-text {
+    text-align: left; /* Align text to the left within this div */
+}
+
+.interaktioner-text h3 {
+    font-size: 50px; /* Adjusted font size for Interaktioner title */
+    margin-bottom: 20px;
+}
+
+.interaktioner-text p {
+    font-size: 23px; /* Adjusted font size for Interaktioner description */
+    line-height: 2.3;
+    max-width: 600px;
+}
+
+/*photocards section*/
+.photocards-section {
+    background-color: white;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.photocards-section .gradient-text {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    color: transparent; /* Make text transparent to show gradient */
+    margin-bottom: 30px;
+}
+
+.photocards-section p {
+    font-size: 25px;
+    line-height: 2.3;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.photocardsimg-section {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Align items vertically center */
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 70px;
+}
+
+.photocards-placeholder {
+    width: 622px; /* Fixed width */
+    height: 488px; /* Fixed height */
+    border-radius: 30px; /* Corner radius */
+    overflow: hidden; /* Ensure corners stay rounded */
+    margin-right: 30px; /* Space between the placeholders */
+    background-color: #d3d3d3; /* Optional: background color */
+}
+
+.photocards-placeholder:last-child {
+    margin-right: 0; /* Remove margin from the last placeholder */
+}
+
+.photocards-placeholder img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder */
+}
+
+/*koncerter*/
+.koncerter-section {
+    background-color: white; /* Background color for the section */
+    padding: 60px 30px; /* Padding for spacing */
+}
+
+.koncerter-content {
+    max-width: 1115px; /* Limit the width of the content */
+    margin: 0 auto; /* Center the content */
+    text-align: center; /* Center the text */
+}
+
+.koncerter-title {
+    font-size: 50px; /* Title font size */
+    margin-bottom: 50px; /* Space below title */
+    font-weight: bold; /* Bold text */
+}
+
+.koncerter-image-placeholder {
+    width: 1115px; /* Width of the image placeholder */
+    height: 488px; /* Height of the image placeholder */
+    margin: 50px auto; /* Center the placeholder with margin */
+    border-radius: 30px; /* Corner radius for placeholder */
+    overflow: hidden; /* Ensure corners stay rounded */
+}
+
+.koncerter-image-placeholder img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder */
+    border-radius: 30px; /* Apply same corner radius to the image */
+}
+
+.koncerter-content p {
+    font-size: 23px; /* Font size for paragraph */
+    line-height: 2.3; /* Line height for readability */
+    max-width: 1100px; /* Maximum width for paragraphs */
+    margin: 0 auto; /* Center the paragraph */
+    margin-bottom: 30px;
+}
+
+/* General Mobile Adjustments for Fankultur Page */
+@media (max-width: 768px) {
+    /* Fankultur Hero Section */
+    .fankultur-hero-section {
+        padding: 50px 0px; /* Reduce padding for mobile */
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .fankultur-hero-gradient-background {
+        margin-top: 250px; /* Reduce top margin for gradient */
+        height: 400px; /* Reduce gradient height */
+    }
+
+    .fankultur-hero-text h1 {
+        font-size: 35px; /* Smaller font size for the heading */
+        margin-bottom: 15px; /* Adjust margin below heading */
+    }
+
+    .fankultur-hero-text p {
+        font-size: 18px; /* Smaller paragraph font size */
+        line-height: 1.5; /* Reduce line height for better fit */
+    }
+
+    .fankultur-hero-image-container {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Adjust height automatically */
+        padding: 10px; /* Add padding for spacing */
+    }
+
+    .fankultur-hero-image-placeholder {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Adjust height to fit content */
+        border-radius: 15px; /* Reduce corner radius */
+    }
+
+    /* Interaktioner Section */
+    .interaktioner-section {
+        padding: 20px 15px; /* Reduce padding on mobile */
+    }
+
+    .interaktioner-content {
+        display: block; /* Stack content vertically on mobile */
+        text-align: center;
+    }
+
+    .interaktioner-placeholder,
+    .interaktioner-text {
+        width: 100%; /* Full width for both image and text */
+        margin: 0 auto 20px; /* Center and add spacing below */
+    }
+
+    .interaktioner-placeholder {
+        height: auto; /* Adjust height to fit content */
+        border-radius: 15px; /* Smaller border radius */
+    }
+
+    .interaktioner-text h3 {
+        font-size: 28px; /* Smaller heading size */
+        margin-bottom: 15px;
+    }
+
+    .interaktioner-text p {
+        font-size: 18px; /* Smaller paragraph size */
+        line-height: 1.6;
+    }
+
+    /* Photocards Section */
+    .photocards-section {
+        padding: 40px 15px; /* Reduce padding for mobile */
+    }
+
+    .photocards-section .gradient-text {
+        font-size: 28px; /* Smaller title size */
+        margin-bottom: 20px;
+    }
+
+    .photocards-section p {
+        font-size: 16px; /* Smaller font size for paragraph */
+        line-height: 1.8;
+    }
+
+    .photocardsimg-section {
+        flex-direction: column; /* Stack items vertically */
+        padding: 0; /* Remove side padding */
+        gap: 20px; /* Add gap between images */
+    }
+
+    .photocards-placeholder {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Adjust height automatically */
+        border-radius: 15px; /* Reduce corner radius */
+    }
+
+    /* Koncerter Section */
+    .koncerter-section {
+        padding: 30px 15px; /* Adjust padding for mobile */
+    }
+
+    .koncerter-title {
+        font-size: 28px; /* Smaller font size for the title */
+        margin-bottom: 20px;
+    }
+
+    .koncerter-content p {
+        font-size: 16px; /* Smaller font size for paragraphs */
+        line-height: 1.8;
+    }
+
+    .koncerter-image-placeholder {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Adjust height automatically */
+        border-radius: 15px; /* Reduce corner radius */
+    }
+}
+
+
+/* Studerende Hero Section */
+.studerende-hero-section {
+    height: 1000px; /* Minimum height for the hero section */
+    position: relative; /* Allows absolutely positioned children */
+}
+
+.studerende-hero-content {
+    display: flex; /* Flexbox layout for content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    position: relative; /* Allows z-index stacking for text and image */
+    z-index: 1; /* Ensure content is above the gradient */
+}
+
+.studerende-hero-text {
+    text-align: center; /* Center text */
+    margin-bottom: 50px; /* Space below text */
+    z-index: 2; /* Ensure text is above the gradient background */
+}
+
+.studerende-hero-text h1 {
+    font-size: 70px; /* Font size for the heading */
+    margin-top: 125px;
+    margin-bottom: 30px; /* Margin below heading */
+    font-weight: bold; /* Bold text */
+    color: white; /* Change to white for visibility */
+}
+
+.studerende-hero-text p {
+    font-size: 28px; /* Font size for paragraph */
+    line-height: 50px; /* Line height for readability */
+    color: white; /* Change to white for visibility */
+}
+
+.studerende-hero-image-container {
+    position: relative; /* Keep this for absolute positioning of the gradient */
+    width: 1072px; /* Fixed width to match the image placeholder */
+    height: 591px; /* Fixed height to match the image placeholder */
+    margin: 0 auto; /* Center the image container */
+}
+
+.studerende-hero-image-placeholder {
+    width: 1072px; /* Fixed width */
+    height: 591px; /* Fixed height */
+    border-radius: 30px; /* Rounded corners for image */
+    overflow: hidden; /* Ensure corners stay rounded */
+    position: relative; /* Position relative for inner image */
+    z-index: 1; /* Ensure image is above background */
+}
+
+.studerende-hero-image-placeholder img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder */
+    border-radius: 30px; /* Apply same corner radius to the image */
+}
+
+.studerende-hero-gradient-background {
+    position: absolute; /* Position it absolutely within the hero section */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    height: 628px; /* Set the height of the gradient background */
+    width: 100%; /* Fixed width for the gradient background */
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    border-radius: 0px; /* Match corner radius */
+    z-index: 0; /* Ensure background is behind all content */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+/* Secondhand Section */
+.secondhand-section {
+    background-color: white;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.secondhand-section h3 {
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.secondhand-section p {
+    font-size: 23px;
+    line-height: 2.3;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.secondhandimg-section {
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically center */
+    padding-top: 20px;
+    padding-bottom: 125px;
+    gap: 250px;
+}
+
+.secondhand-placeholder {
+    width: 310px; /* Fixed width */
+    height: 310px; /* Fixed height */
+    border-radius: 30px; /* Corner radius */
+    background-color: white; /* Set background color to make the gradient border visible */
+    border: 3px solid transparent; /* Use a transparent border */
+    border-radius: 30px; /* Corner radius of 30px */
+    background-image: linear-gradient(white, white), linear-gradient(135deg, #4B87FF, #CA4CEF); /* Double background */
+    background-origin: border-box;
+    background-clip: content-box, border-box; /* Ensures gradient only applies to the border */
+    overflow: hidden; /* Ensure corners stay rounded */
+    margin-right: 5px; /* Space between the placeholders */
+    background-color: #d3d3d3; /* Optional: background color */
+    transition: transform 0.3s ease; /* Subtle transform effect on hover */
+}
+
+.secondhand-placeholder:last-child {
+    margin-right: 0; /* Remove margin from the last placeholder */
+}
+
+.secondhand-placeholder img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder */
+}
+
+.secondhand-placeholder:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.udlandet-section {
+    background-color: white;
+    padding: 60px 70px;
+}
+
+.udlandet-content {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+    justify-content: space-between; /* Distribute space between items */
+}
+
+.udlandet-text {
+    text-align: right; /* Align text to the right within this div */
+    margin-right: 30px; /* Add margin to the right to create space between text and image */
+}
+
+.udlandet-text h3 {
+    font-size: 50px; /* Adjusted font size for Lightsticks title */
+    margin-bottom: 20px;
+}
+
+.udlandet-text p {
+    font-size: 23px; /* Adjusted font size for Lightsticks description */
+    line-height: 2.3;
+    max-width: 600px;
+}
+
+.udlandet-placeholder {
+    width: 651px; /* Set width */
+    height: 585px; /* Set height */
+    background-color: #d3d3d3;
+    border-radius: 30px;
+}
+
+.udlandet-placeholder img {
+    width: 100%; /* Ensure the image takes full width */
+    height: 100%; /* Ensure the image takes full height */
+    object-fit: cover; /* Ensure the image covers the entire placeholder without distortion */
+    border-radius: 30px; /* Apply radius slightly less than the container to match the border radius */
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+    /* Secondhand Section */
+    .secondhand-section {
+        padding: 20px 15px; /* Reduce padding for smaller screens */
+    }
+
+    .secondhand-section h3 {
+        font-size: 32px; /* Reduce heading size */
+        margin-bottom: 20px; /* Decrease bottom margin */
+        text-align: center; /* Center the heading */
+    }
+
+    .secondhand-section p {
+        font-size: 18px; /* Reduce paragraph font size */
+        line-height: 1.8; /* Adjust line-height for readability */
+        max-width: 100%; /* Ensure full width on smaller screens */
+        text-align: center; /* Center the paragraph text */
+    }
+
+    .secondhandimg-section {
+        display: flex;
+        flex-direction: column; /* Stack images vertically */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 20px; /* Reduce spacing between images */
+        padding-bottom: 60px; /* Reduce bottom padding */
+    }
+
+    .secondhand-placeholder {
+        display: flex; /* Ensure content inside is flexible */
+        justify-content: center; /* Horizontally center the image */
+        align-items: center; /* Vertically center the image */
+        width: 100%; /* Full width on smaller screens */
+        max-width: 310px; /* Limit the maximum width */
+        height: auto; /* Adjust height automatically */
+        margin: 0 auto; /* Center the placeholder container */
+        border-width: 2px; /* Reduce border width for mobile */
+        border-radius: 15px; /* Reduce corner radius */
+    }
+
+    .secondhand-placeholder img {
+        width: 100%; /* Ensure image fills the placeholder */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the placeholder without distortion */
+    }
+    
+    /* Udlandet Section Adjustments */
+    .udlandet-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        text-align: center; /* Align text for mobile */
+    }
+
+    .udlandet-placeholder {
+        width: 100%; /* Full width */
+        height: auto; /* Flexible height */
+        margin: 0 0 20px 0; /* Bottom margin for spacing */
+    }
+
+    .udlandet-text h3 {
+        font-size: 35px; /* Smaller titles for mobile */
+    }
+
+    .udlandet-text p {
+        font-size: 18px; /* Adjust text size */
+        max-width: 100%; /* Full width text */
+    }
+}
+
+/* Events page */
+.events-hero-section {
+    padding:120px 0px; /* Padding for spacing */
+    height: 425px; /* Minimum height for the hero section */
+    position: relative; /* Allows absolutely positioned children */
+}
+
+.events-hero-content {
+    display: flex; /* Flexbox layout for content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    position: relative; /* Allows z-index stacking for text and image */
+    z-index: 1; /* Ensure content is above the gradient */
+}
+
+.events-hero-text {
+    text-align: center; /* Center text */
+}
+
+.events-hero-text h1 {
+    font-size: 70px; /* Font size for the heading */
+    margin-bottom: 40px; /* Margin below heading */
+    font-weight: bold; /* Bold text */
+}
+
+.events-hero-text p {
+    font-size: 28px; /* Font size for paragraph */
+    line-height: 50px; /* Line height for readability */
+}
+
+/* General Mobile Adjustments for Studerende Page */
+@media (max-width: 768px) {
+    /* Studerende Hero Section */
+    .studerende-hero-section {
+        padding: 20px 0px; /* Reduce padding for mobile */
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .studerende-hero-text h1 {
+        font-size: 35px; /* Reduce heading size for mobile */
+        margin-top: 30px; /* Reduce top margin */
+        margin-bottom: 15px; /* Reduce bottom margin */
+    }
+
+    .studerende-hero-text p {
+        font-size: 16px; /* Reduce paragraph font size */
+        line-height: 1.5; /* Adjust line height for readability */
+    }
+
+    .studerende-hero-image-container {
+        width: 80%; /* Full width on mobile */
+        height: auto; /* Adjust height automatically */
+        padding: 0 10px; /* Add padding to left and right */
+    }
+
+    .studerende-hero-image-placeholder {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Adjust height automatically */
+        border-radius: 15px; /* Reduce corner radius */
+    }
+
+    /* Secondhand Section */
+    .secondhand-section {
+        padding: 20px 15px; /* Reduce padding for mobile */
+    }
+
+    .secondhand-section h3 {
+        font-size: 28px; /* Reduce heading font size */
+        margin-bottom: 20px; /* Reduce bottom margin */
+    }
+
+    .secondhand-section p {
+        font-size: 16px; /* Smaller font size for readability */
+        line-height: 1.8; /* Adjust line height for readability */
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .secondhandimg-section {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center align for mobile */
+        gap: 20px; /* Reduce spacing between placeholders */
+        padding-top: 20px;
+    }
+
+    .secondhand-placeholder {
+        width: 60%; /* Full width on mobile */
+        height: auto; /* Adjust height automatically */
+        border-radius: 15px; /* Smaller corner radius */
+        margin: 0 0 15px 0; /* Add bottom margin to create spacing */
+        display: flex; /* Ensure that the image aligns properly within the container */
+        justify-content: center; /* Center the image within the placeholder */
+        align-items: center; /* Center the image vertically within the placeholder */
+    }
+
+    .secondhand-placeholder img {
+        width: 100%; /* Make image fill the width of the placeholder */
+         height: 100%; /* Fill height of the placeholder to cover completely */
+        object-fit: cover; /* Cover the entire area without leaving gaps */
+    }
+
+    /* Other Sections for Studerende Page */
+    /* Gradient background and hero section adjustments */
+    .studerende-hero-gradient-background {
+        height: 370px; /* Reduce gradient background height */
+        border-bottom-left-radius: 25px; /* Reduce radius to fit mobile */
+        border-bottom-right-radius: 25px; /* Reduce radius to fit mobile */
+    }
+
+    /* General Adjustments for Images and Text */
+    img {
+        max-width: 100%; /* Ensure all images fit within the screen */
+        height: auto; /* Keep aspect ratio */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2; /* Increase line-height to improve readability */
+    }
+
+    p {
+        line-height: 1.6; /* Adjust line-height for paragraphs */
+        padding: 0 10px; /* Add some padding for mobile display */
+    }
+}
+
+
+/* Events page */
+.events-event-hero-section {
+    padding:200px 0px; /* Padding for spacing */
+    height: 100vh; /* Minimum height for the hero section */
+    position: relative; /* Allows absolutely positioned children */
+}
+
+.events-event-hero-content {
+    display: flex; /* Flexbox layout for content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    position: relative; /* Allows z-index stacking for text and image */
+    z-index: 1; /* Ensure content is above the gradient */
+}
+
+.events-event-hero-text {
+    text-align: center; /* Center text */
+}
+
+.events-event-hero-text h1 {
+    font-size: 70px; /* Font size for the heading */
+    margin-bottom: 40px; /* Margin below heading */
+    font-weight: bold; /* Bold text */
+}
+
+.events-event-hero-text p {
+    font-size: 28px; /* Font size for paragraph */
+    line-height: 50px; /* Line height for readability */
+}
+
+/* typer af events */
+.eventss-section {
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    padding-left: 60px;
+    padding-right: 30px;
+    text-align: center; /* Center text */
+    min-height: 1000px; /* Set a minimum height to prevent overflow */
+    color: white; /* Make all text white */
+    padding-top: 70px;
+}
+
+.eventss-section h2 {
+    font-size: 50px; /* Font size for the heading */
+    margin-bottom: 30px; /* Space below heading */
+    color: white; /* Ensure the heading is white */
+}
+
+.eventss-section p {
+    font-size: 28px; /* Font size for the introductory text */
+    margin-bottom: 100px; /* Space below paragraph */
+    line-height: 2;
+    color: white; /* Make paragraph text white */
+}
+
+.event-type {
+    display: flex; /* Flexbox for aligning text and image */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-start; /* Align items to the left */
+    margin-bottom: 50px; /* Space between event sections */
+}
+
+.event-type-text-cupsleeve,
+.event-type-text-rpd {
+    flex: 1; /* Allow text to take available space */
+    color: white; /* Make sure all event text is white */
+}
+
+.event-type-text-cupsleeve {
+    text-align: right; /* Align text to the right */
+    margin-right: 30px; /* Space between image and text */
+}
+
+.event-type-text-rpd {
+    text-align: left; /* Align text to the left */
+    margin-top: 50px;
+    margin-left: 0px; /* Space between image and text */
+}
+
+.event-type h3 {
+    font-size: 50px; /* Font size for event title */
+    margin-bottom: 10px; /* Space below title */
+    color: white; /* Ensure event title text is white */
+}
+
+.event-type-placeholder {
+    margin-top: -70px;
+    width: 253px; /* Fixed width for image */
+    height: 253px; /* Fixed height for image */
+    border-radius: 30px; /* Rounded corners */
+    overflow: hidden; /* Ensure corners stay rounded */
+    background-color: #d3d3d3; /* Optional: background color */
+    margin-right: 30px; /* Space between the placeholders */
+}
+
+.event-type-placeholder img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder */
+}
+
+
+/* Kommende events Section */
+.events-event-section {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 70px 30px; /* Adjust padding as needed */
+    height: 1100px;
+    margin-bottom: 70px;
+}
+
+.events-event-content h2 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.events-event-content p {
+    font-size: 25px;
+}
+
+.events-event-content h3 {
+    font-size: 40px;
+    margin-top: 75px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.event-event-link {
+    font-size: 25px;
+    color: #0000EE; /* Light blue color for the link */
+    text-decoration: none;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.event-event-link:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Adjustments for Events Page */
+@media (max-width: 768px) {
+    /* General Adjustments for Events Page */
+    .events-hero-section {
+        margin-bottom: 200px;
+    }
+    
+    .eventss-section {
+        padding: 20px 15px; /* Reduce padding for mobile */
+        text-align: center; /* Ensure text is centered on mobile */
+        min-height: auto; /* Adjust height to fit content */
+    }
+
+    .eventss-section h2 {
+        font-size: 32px; /* Reduce heading size */
+        margin-bottom: 15px; /* Adjust margin below heading */
+    }
+
+    .eventss-section p {
+        font-size: 18px; /* Smaller font size for readability */
+        margin-bottom: 50px; /* Reduce space below paragraph */
+        line-height: 1.5; /* Adjust line height for readability */
+    }
+
+    /* Event Type Adjustments */
+    .event-type {
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: center; /* Center align for mobile */
+        text-align: center; /* Center text for mobile */
+        margin-bottom: 30px; /* Adjust spacing between event sections */
+    }
+
+    .event-type-text-cupsleeve,
+    .event-type-text-rpd {
+        text-align: center; /* Center align the text blocks */
+        margin: 0; /* Remove side margins */
+    }
+
+    .event-type h3 {
+        font-size: 28px; /* Reduce size of event title */
+        margin-bottom: 10px; /* Adjust spacing below title */
+        margin-top: 20px;
+    }
+
+    .event-type-placeholder {
+        margin: 0; /* Remove all margins */
+        padding: 0; /* Remove all padding */
+        overflow: hidden; /* Hide any overflow */
+        position: relative; /* Maintain relative positioning */
+        border: 0; /* Ensure no border is contributing to spacing */
+        margin-bottom: 50px;
+    }
+    
+    .event-type-placeholder img {
+        width: 100%; /* Ensure the image fills the container */
+        height: 100%; /* Make sure image height matches the container */
+        object-fit: cover; /* Ensure the image covers the container properly */
+        display: block; /* Remove any inline spacing */
+        margin: 0; /* Remove any default margin */
+    }
+
+    /* Kommende Events Section */
+    .events-event-section {
+        padding: 40px 15px; /* Reduce padding for mobile */
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .events-event-content h2 {
+        font-size: 32px; /* Reduce font size for the heading */
+        margin-bottom: 20px; /* Adjust margin below heading */
+    }
+
+    .events-event-content p {
+        font-size: 16px; /* Smaller font size for readability */
+        margin-bottom: 20px; /* Adjust space below paragraph */
+    }
+
+    .events-event-content h3 {
+        font-size: 24px; /* Reduce heading size */
+        margin-top: 40px; /* Adjust top margin */
+        margin-bottom: 20px; /* Adjust bottom margin */
+    }
+
+    .events-event-content p2 {
+        font-size: 16px; /* Adjust paragraph font size */
+    }
+
+    .event-event-link {
+        font-size: 16px; /* Reduce link font size */
+        margin-bottom: 20px; /* Adjust spacing below link */
+    }
+}
+
+
+/*Om mig page*/
+.ommigimg-section {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Align items vertically center */
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 140px;
+}
+
+.ommig-placeholder {
+    width: 569px; /* Fixed width */
+    height: 377px; /* Fixed height */
+    border: 5px solid transparent; /* Use a transparent border */
+    border-radius: 30px; /* Corner radius of 30px */
+    background-image: linear-gradient(white, white), linear-gradient(135deg, #4B87FF, #CA4CEF); /* Double background */
+    background-origin: border-box;
+    background-clip: content-box, border-box; /* Ensures gradient only applies to the border */
+    overflow: hidden; /* Ensure corners stay rounded */
+}
+
+.ommig-placeholder:last-child {
+    margin-right: 0; /* Remove margin from the last placeholder */
+}
+
+.ommig-placeholder img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder */
+}
+
+.introduction-page .hero-image-placeholder-ommig {
+    width: 661px; /* Fixed width */
+    height: 644px; /* Fixed height */
+    background-color: #d3d3d3; /* Fallback background color */
+    border-radius: 30px; /* Add 30px corner radius */
+    overflow: hidden; /* Ensures image corners stay rounded */
+    margin-left: auto; /* Align the image properly without skewing */
+    margin-right: 30px; /* Add space between the image and screen edge */
+}
+
+.introduction-page .hero-image-placeholder-ommig img {
+    width: 100%;
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover; /* Ensures the image covers the placeholder without distortion */
+    border-radius: 30px; /* Apply same corner radius to the image */
+}
+
+@media (max-width: 768px) {
+    /* Om mig Image Section */
+    .ommigimg-section {
+        flex-direction: column; /* Stack items vertically */
+        padding-left: 20px; /* Adjust padding for mobile */
+        padding-right: 20px; /* Adjust padding for mobile */
+        padding-bottom: 60px; /* Reduce bottom padding */
+        align-items: center; /* Center items on mobile */
+    }
+
+    .ommig-placeholder {
+        width: 90%; /* Make placeholder fill most of the width on mobile */
+        max-width: 400px; /* Limit the maximum width to ensure readability */
+        height: auto; /* Adjust height automatically to maintain aspect ratio */
+        margin-bottom: 20px; /* Add margin between stacked placeholders */
+        border-width: 3px; /* Reduce border width for better appearance on mobile */
+        border-radius: 20px; /* Reduce corner radius for mobile */
+    }
+
+    .ommig-placeholder img {
+        width: 100%; /* Make image responsive to container */
+        height: 100%; /* Ensure image fills the container vertically */
+        object-fit: cover; /* Ensure image covers the entire container without overflow */
+        display: block; /* Removes any inline display gap */
+    }
+
+    .introduction-page .hero-image-placeholder-ommig {
+        width: 100%;
+        max-width: 661px; /* Limit the width to maintain layout */
+        height: auto; /* Let height adjust automatically */
+        margin-bottom: 20px; /* Space below the image */
+        background-color: #d3d3d3; /* Fallback background color */
+        border-radius: 30px; /* Add corner radius */
+        overflow: hidden; /* Ensure rounded corners for image */
+        display: flex; /* Flex to align image if needed */
+        justify-content: center;
+        align-items: center;
+        order: 1; /* Ensures that the hero image comes after the heading */
+    }
+
+    .introduction-page .hero-image-placeholder-ommig img {
+        width: 100%;
+        height: 100%; /* Set to fill the container height */
+        object-fit: cover; /* Make sure image fills without losing aspect ratio */
+        border-radius: 30px; /* Make sure it matches the container */
+        display: block; /* Remove any inline image gaps */
+    }    
+
+    /* General Text Adjustments */
+    h1, h2, h3, h4 {
+        font-size: 1.5em; /* Reduce heading sizes to fit smaller screens */
+        text-align: center; /* Center-align headings for a better mobile experience */
+        order: 0; /* Ensure heading appears first */
+    }
+
+    p {
+        font-size: 1em; /* Reduce paragraph font size for readability */
+        line-height: 1.6; /* Set line height for readability */
+        text-align: center; /* Center-align paragraphs */
+        padding: 0 10px; /* Add horizontal padding for better readability */
+        order: 2; /* Ensures paragraphs come after the image */
+    }
+}
+
+
+/* Kontakt page */
+.kontaktt-section {
+    background-color: white; /* White background for the section */
+    padding: 60px 30px; /* Padding for spacing */
+    text-align: center; /* Center text */
+    height: 100vh; /* Full viewport height */
+}
+
+.kontaktt-section h2 {
+    font-size: 50px; /* Font size for the heading */
+    margin-bottom: 30px; /* Space below heading */
+}
+
+.kontaktt-section p {
+    font-size: 23px; /* Font size for the description */
+    margin-bottom: 50px; /* Space below description */
+}
+
+/* Form styles */
+.kontakt-form {
+    max-width: 600px; /* Limit the maximum width of the form */
+    margin: 0 auto; /* Center the form */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between form elements */
+}
+
+.form-group {
+    display: flex; /* Flexbox for labels and inputs */
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: flex-start; /* Align items to the left */
+}
+
+label {
+    font-size: 18px; /* Font size for labels */
+    margin-bottom: 5px; /* Space below label */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #e2e1e1; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 16px; /* Font size for inputs */
+    background: white; /* Keep the background white */
+    transition: border 0.3s ease; /* Transition for border */
+    outline: none; /* Remove outline */
+}
+
+/* Change border color on focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border: 2px solid #4B87FF; /* Change border to blue on focus */
+}
+
+textarea {
+    resize: none; /* Prevent resizing */
+}
+
+.send-button {
+    padding: 15px 30px; /* Padding for button */
+    background: linear-gradient(135deg, #4B87FF, #CA4CEF); /* Gradient background */
+    border: none; /* Ensure no border */
+    border-radius: 30px; /* Rounded corners */
+    display: inline-block; /* Allow block and inline styles */
+    font-size: 20px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    position: relative; /* Positioning for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: white; /* Always white text */
+    box-shadow: none; /* Remove any shadow */
+    transition: transform 0.3s ease; /* Subtle transform effect on hover */
+}
+
+/* Hover effect */
+.send-button:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
